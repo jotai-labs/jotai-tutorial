@@ -13,7 +13,7 @@ export const readWriteAtom = atom((get) => get(count),
 ~~~
 
 The first parameter is for reading and the second is for modifying the atom value.
-Since the \`readWriteAtom\` is capable to read and set the original atom value, so we can only export \`readWriteAtom\` atom and can hide the original atom in a smaller scope. In this way we have to deal with less number of atoms in our app.
+Since the \`readWriteAtom\` is capable of both reading and updating the original atom value, we can export \`readWriteAtom\` on its own and can hide the original atom in a smaller scope. This allows us to reduce the number of atoms in our app.
 
-See the code how we use only \`handleMouseMoveAtom\` to read and update both the \`dotsArray\` in our app.
+See the code for an example of how we can use only \`handleMouseMoveAtom\` to both read and update \`dotsAtom\` in our app.
 `
