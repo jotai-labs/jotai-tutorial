@@ -51,7 +51,7 @@ function Component() {
   }
   return (
     <div className="app">
-      <p>Todays Goal: {todoGoal.title}</p>
+      <p>Today's Goal: {todoGoal.title}</p>
       <button onClick={handleClick}>New Goal</button>
     </div>
   )

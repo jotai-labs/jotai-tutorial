@@ -4,17 +4,17 @@ export const markdown = `
 Using async atoms, you gain access to real-world data while still managing them directly from your atoms and with incredible ease.
 
 We separate async atoms in two main categories:
-•Async read atoms
-•Async write atoms
+• Async read atoms
+• Async write atoms
 
-Let's see first the async read atoms.
-The \`read\` function of an atom can return a promise.
+Let's first examine async read atoms.
+The \`read\` function of an atom can return a Promise.
 ~~~js
 const counter = atom(0);
 const asyncAtom = atom(async (get) => get(counter) * 5);
 ~~~
 
-Jotai is inherently leveraging \`Suspense\` to handle asynchronous flows.
+Jotai inherently leverages \`Suspense\` to handle asynchronous flows.
 
 ~~~js
 <Suspense fallback={<span>loading...</span>}>
@@ -22,7 +22,7 @@ Jotai is inherently leveraging \`Suspense\` to handle asynchronous flows.
 </Suspense>
 ~~~
 
-But there is a more jotai way of doing this with the \`loadable api\` present in \`jotai/utils\`. By simply wrapping the atom in loadable util and it returns the value with one of the three states: \`loading\`, \`hasData\` and \`hasError\`.
+But there is a more Jotai-esque way of doing this using the [\`loadable\`](https://jotai.org/docs/utilities/async#loadable) API present in \`jotai/utils\`. By simply wrapping the atom in the \`loadable\` util, it returns the value with one of the three states: \`loading\`, \`hasData\`, and \`hasError\`.
 
 ~~~js
 {

@@ -16,7 +16,7 @@ const lastName = atom('Harris');
 const fullName = atom((get) => get(firstName) + " " + get(lastName));
 ~~~
 
-You can do more than just simply read the value of other atoms like \`filter\` and \`sorted\` out them or \`map\` over the values of the parent atom. And this is the beauty of it, Jotai gracefully lets you create dumb atoms derivated from even more dumb atoms.
+You can do more than just simply read the value of other atoms. You can also \`filter\`, \`sort\`, or \`map\` over the values of the parent atom. And this is the beauty of it: Jotai gracefully lets you create dumb atoms derivated from even dumber atoms.
 Here is a example of getting the list of all online and offline friends.
 ~~~js
 const friendsStatus = atom([ 

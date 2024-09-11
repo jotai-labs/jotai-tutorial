@@ -1,7 +1,7 @@
 export const markdown = `
 # Atom Creators
 
-An atom creator means simply a function that returns an atom or a set of atoms. It's just a function and it's not some features that the library provides, but it's an important pattern to make a fairly complex use case. This avoids the boilerplate of having to set up another atom just to update the state of the first.
+An atom creator is simply a function that returns an atom or a set of atoms. As a function, it lacks some features that the library provides, but it's an important pattern that can handle fairly complex use cases. Using an atom creator function will reduce the boilerplate of needing to set up a second atom just to update the state of the first.
 
 Consider this case,
 ~~~js
@@ -14,7 +14,7 @@ const incBarAtom = atom(null, (get, set) => {
    set(barAtom, c => c + 1);
 };
 ~~~
-Although you can attach the suitable actions to the setter of the respective atom, but this also increases boilerplate code when there are more atoms in your code.
+Although you could attach the suitable actions to the setter of the respective atom, it would also add more boilerplate code when there are more atoms in your code.
 ~~~js
 const incAllAtom = atom(null, (get, set, action) => {
    if(action === 'inc1') // increase first atom
@@ -23,7 +23,7 @@ const incAllAtom = atom(null, (get, set, action) => {
 }
 ~~~
 
-So simply replace this with the atom creators function.
+We can simplify this with an atom creator function.
 ~~~js
 const createCountIncAtoms = (initialValue) => {
   const baseAtom = atom(initialValue)
