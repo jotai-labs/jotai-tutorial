@@ -11,11 +11,11 @@ Initialize a theme atom with a default value.
 const theme = atom('light');
 ~~~
 
-Passed the atom to the \`useState\` hook.
+Pass the atom to the \`useAtom\` hook.
 
 ~~~js
 const [appTheme, setAppTheme] = useAtom(theme);
 ~~~
 
-Yes, That's all we have to do to define a global theme state which is accessible to all components of your app.
+Yes, that's all we have to do to define a global theme state which is accessible to all components of your app.
 `;
