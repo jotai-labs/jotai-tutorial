@@ -45,5 +45,6 @@ const AsyncComponent = () => {
     return <div>Loading...</div>
   }
   return <div>Value: {value.data}</div>
+}
 ~~~
 `;
